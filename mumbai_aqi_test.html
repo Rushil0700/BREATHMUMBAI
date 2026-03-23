@@ -1,0 +1,1924 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_b95efbe9d1ffd58ec6b4c437d32ce6fe {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_b95efbe9d1ffd58ec6b4c437d32ce6fe" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_b95efbe9d1ffd58ec6b4c437d32ce6fe = L.map(
+                "map_b95efbe9d1ffd58ec6b4c437d32ce6fe",
+                {
+                    center: [19.076, 72.877],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": true,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_3d80281fb83134d816ba45fb992f0041 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_3d80281fb83134d816ba45fb992f0041.addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            var heat_map_7008ab2a175edc7dda2149eee07734b6 = L.heatLayer(
+                [[19.08479240977064, 72.81246619569254, 0.284], [19.065494278785195, 72.81315816057155, 0.284], [19.041823117413855, 72.8092036170395, 0.284], [19.044450977382912, 72.84710626519494, 0.284], [19.102084673645084, 72.78868898749461, 0.284], [19.0761772158431, 72.80619411696551, 0.284], [19.023711631994004, 72.81208449191135, 0.284], [19.228657408224336, 72.8408648863311, 0.196], [19.206085647160762, 72.85993352852962, 0.196], [19.20047376777785, 72.85876417510627, 0.196], [19.238764153599412, 72.85894286715255, 0.196], [19.04066555589133, 72.89052304954852, 0.374], [19.041284679350234, 72.90494272096886, 0.374], [19.029274217018507, 72.89209409181139, 0.374], [19.053758413455782, 72.91622920714431, 0.374], [19.0373881444715, 72.89638908262005, 0.374], [19.045875443064826, 72.90357827254795, 0.374], [19.038215775761184, 72.9069532345567, 0.374], [19.076235998631518, 72.92357138596083, 0.374], [19.032020895556585, 72.88146188628646, 0.374], [18.92239307490352, 72.81989236465445, 0.224], [18.898896324006017, 72.78404528523097, 0.224], [18.894962022069205, 72.81731577741661, 0.224], [18.95509562083039, 72.81642084298701, 0.224], [18.90802081371098, 72.84118402194348, 0.224], [19.103281589241035, 72.86861705989814, 0.396], [19.078635914039722, 72.89340861239207, 0.396], [19.047255923851537, 72.87115881774615, 0.396], [19.06214602616373, 72.88895767397156, 0.396], [19.05777152286715, 72.8799826550861, 0.396], [19.076154812625724, 72.884329009707, 0.396], [19.050262010943165, 72.85554472155205, 0.396], [19.06170588292092, 72.89563031045665, 0.396], [19.074489479119237, 72.90088670906614, 0.396], [19.18272331203289, 72.87350436096709, 0.268], [19.153343402176116, 72.82718310857791, 0.268], [19.188003021165716, 72.854356963524, 0.268], [19.164075100080083, 72.81734968120347, 0.268], [19.187823840587754, 72.82522359831883, 0.268], [19.19484541293119, 72.88971822221501, 0.268], [18.949926972049933, 72.83336179692273, 0.33], [18.981460492334488, 72.8379794417625, 0.33], [18.970478793392026, 72.82908347694665, 0.33], [18.98510022799388, 72.85279359677891, 0.33], [18.939380022596094, 72.8564018316917, 0.33], [18.995996576560216, 72.8500804248282, 0.33], [18.956641034629033, 72.81949303585368, 0.33], [18.96260745143577, 72.83195411217103, 0.33], [19.05641620498137, 73.01655623700074, 0.176], [19.042689148891828, 73.04866639923969, 0.176], [19.021026014702574, 73.03660051074495, 0.176], [19.020410438706286, 73.01782865345416, 0.176], [19.09697358932978, 72.94194268075367, 0.236], [19.095895646426914, 72.90134263668881, 0.236], [19.101096205684392, 72.8856958547676, 0.236], [19.11819802484534, 72.90659790388366, 0.236], [19.113678291274134, 72.90393402282986, 0.236], [19.048206635968693, 72.8388392551839, 0.344], [18.97677382984685, 72.86697121878207, 0.344], [19.039283074443254, 72.85633020434454, 0.344], [19.004789800188323, 72.83555182198529, 0.344], [19.067967819725954, 72.86828617896781, 0.344], [19.04849453339669, 72.8800658851696, 0.344], [19.068906657645826, 72.87288495605603, 0.344], [19.05455299948343, 72.86689171344005, 0.344], [19.02223475810885, 72.81518018134332, 0.256], [19.031198440398285, 72.82755605812832, 0.256], [19.053983550635376, 72.80895198871573, 0.256], [19.029145678844245, 72.8057982795847, 0.256], [19.026818608343937, 72.84439926245646, 0.256], [19.009357447233732, 72.80918621625605, 0.256], [19.057494456358114, 72.88283088075771, 0.312], [19.129097328796416, 72.89489344946433, 0.312], [19.13886571151038, 72.87033992321018, 0.312], [19.106430564116053, 72.84977190909441, 0.312], [19.14065234051183, 72.85205728772186, 0.312], [19.078679683567753, 72.87572901353306, 0.312], [19.110456133041815, 72.87798140337674, 0.312], [19.17589490864872, 73.01511074571634, 0.29], [19.22196074291844, 72.98527479879452, 0.29], [19.221794089667995, 72.97082034874572, 0.29], [19.194500903301005, 72.97340868860306, 0.29], [19.224913211244054, 72.99221439114346, 0.29], [19.239187063480678, 73.00285732593944, 0.29], [19.229600898673688, 72.99419299138412, 0.29], [19.072638830530607, 72.82522107702597, 0.43], [19.064757057464035, 72.88309226774584, 0.43], [19.06148866097281, 72.88226243956112, 0.43], [19.06303282341067, 72.86024221688417, 0.43], [19.025630533924296, 72.85622445188972, 0.43], [19.029603947060252, 72.8378613914727, 0.43], [19.066417387181023, 72.85386715004817, 0.43], [19.030303880646755, 72.86066248440588, 0.43], [19.02791855351199, 72.82751159999704, 0.43], [19.08054260386802, 72.85328625136313, 0.43], [19.22734388874065, 72.84350314583202, 0.244], [19.216339918557665, 72.84874534303083, 0.244], [19.20858350909866, 72.87573819706243, 0.244], [19.205544458154137, 72.8119573122329, 0.244], [19.213030461304133, 72.86009362996566, 0.244], [19.238782442538035, 72.86305679506378, 0.244]],
+                {
+  "minOpacity": 0.3,
+  "maxZoom": 13,
+  "radius": 35,
+  "blur": 25,
+  "gradient": {
+  "0.0": "blue",
+  "0.3": "green",
+  "0.5": "yellow",
+  "0.7": "orange",
+  "0.85": "red",
+  "1.0": "purple",
+},
+}
+            );
+        
+    
+            heat_map_7008ab2a175edc7dda2149eee07734b6.addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            var circle_marker_e14643df18d30d8212a6d932cc23213f = L.circleMarker(
+                [19.0596, 72.8295],
+                {"bubblingMouseEvents": true, "color": "#ffff00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffff00", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14, "stroke": true, "weight": 3}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+        var popup_97b1fc46ef5990ac56f0328c8fd278b1 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_1e8e80e6a79ec004184291f84c908b89 = $(`<div id="html_1e8e80e6a79ec004184291f84c908b89" style="width: 100.0%; height: 100.0%;">         <div style='font-family:monospace;min-width:200px;'>             <b style='font-size:14px;'>Bandra</b><br>             <hr style='margin:4px 0;'>             <span style='font-size:18px;font-weight:bold;color:#ffff00;'>                 AQI 142</span>             <span style='font-size:12px;'> — Moderate</span><br>             <br>             <b>PM2.5:</b> 58 µg/m³<br>             <b>PM10:</b>  92 µg/m³<br>             <b>NO₂:</b>   38 ppb<br>             <br>             <i style='color:#ffff00;'>😐 Unhealthy for sensitive groups. Reduce outdoor exertion.</i>         </div>         </div>`)[0];
+                popup_97b1fc46ef5990ac56f0328c8fd278b1.setContent(html_1e8e80e6a79ec004184291f84c908b89);
+            
+        
+
+        circle_marker_e14643df18d30d8212a6d932cc23213f.bindPopup(popup_97b1fc46ef5990ac56f0328c8fd278b1)
+        ;
+
+        
+    
+    
+            circle_marker_e14643df18d30d8212a6d932cc23213f.bindTooltip(
+                `<div>
+                     Bandra: AQI 142
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_56ef8cc295a69880406283063666b20b = L.marker(
+                [19.0596, 72.8295],
+                {
+}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            var div_icon_8cfe6862d5c136ef84186b999053725a = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-family:monospace;font-size:10px;\n                font-weight:bold;color:white;text-shadow:1px 1px 2px black;\n                text-align:center;\u0027\u003e142\u003c/div\u003e",
+  "iconSize": [40, 20],
+  "iconAnchor": [20, 10],
+  "className": "empty",
+});
+        
+    
+                marker_56ef8cc295a69880406283063666b20b.setIcon(div_icon_8cfe6862d5c136ef84186b999053725a);
+            
+    
+            var circle_marker_97ade41d9a113c0b25676c6f00b0e222 = L.circleMarker(
+                [19.2307, 72.8567],
+                {"bubblingMouseEvents": true, "color": "#92d14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#92d14f", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14, "stroke": true, "weight": 3}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+        var popup_0811d80f6f8a922becc07fa470d40cd2 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_ef1d761f12857627b992b340bdd6d640 = $(`<div id="html_ef1d761f12857627b992b340bdd6d640" style="width: 100.0%; height: 100.0%;">         <div style='font-family:monospace;min-width:200px;'>             <b style='font-size:14px;'>Borivali</b><br>             <hr style='margin:4px 0;'>             <span style='font-size:18px;font-weight:bold;color:#92d14f;'>                 AQI 98</span>             <span style='font-size:12px;'> — Satisfactory</span><br>             <br>             <b>PM2.5:</b> 38 µg/m³<br>             <b>PM10:</b>  68 µg/m³<br>             <b>NO₂:</b>   22 ppb<br>             <br>             <i style='color:#92d14f;'>😊 Acceptable. Sensitive people may feel mild effects.</i>         </div>         </div>`)[0];
+                popup_0811d80f6f8a922becc07fa470d40cd2.setContent(html_ef1d761f12857627b992b340bdd6d640);
+            
+        
+
+        circle_marker_97ade41d9a113c0b25676c6f00b0e222.bindPopup(popup_0811d80f6f8a922becc07fa470d40cd2)
+        ;
+
+        
+    
+    
+            circle_marker_97ade41d9a113c0b25676c6f00b0e222.bindTooltip(
+                `<div>
+                     Borivali: AQI 98
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_cbd19f457d36ddf8fc5238580877eac8 = L.marker(
+                [19.2307, 72.8567],
+                {
+}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            var div_icon_eb6958cb82e55da68c0b8c500e91280f = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-family:monospace;font-size:10px;\n                font-weight:bold;color:white;text-shadow:1px 1px 2px black;\n                text-align:center;\u0027\u003e98\u003c/div\u003e",
+  "iconSize": [40, 20],
+  "iconAnchor": [20, 10],
+  "className": "empty",
+});
+        
+    
+                marker_cbd19f457d36ddf8fc5238580877eac8.setIcon(div_icon_eb6958cb82e55da68c0b8c500e91280f);
+            
+    
+            var circle_marker_690288b12cca5563ecc4132aff99dffd = L.circleMarker(
+                [19.0522, 72.8993],
+                {"bubblingMouseEvents": true, "color": "#ffff00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffff00", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14, "stroke": true, "weight": 3}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+        var popup_929f61cab4111fc51e343f043d11ad6e = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_1908213ceae5aa3e6546f03ad294f163 = $(`<div id="html_1908213ceae5aa3e6546f03ad294f163" style="width: 100.0%; height: 100.0%;">         <div style='font-family:monospace;min-width:200px;'>             <b style='font-size:14px;'>Chembur</b><br>             <hr style='margin:4px 0;'>             <span style='font-size:18px;font-weight:bold;color:#ffff00;'>                 AQI 187</span>             <span style='font-size:12px;'> — Moderate</span><br>             <br>             <b>PM2.5:</b> 82 µg/m³<br>             <b>PM10:</b>  134 µg/m³<br>             <b>NO₂:</b>   52 ppb<br>             <br>             <i style='color:#ffff00;'>😐 Unhealthy for sensitive groups. Reduce outdoor exertion.</i>         </div>         </div>`)[0];
+                popup_929f61cab4111fc51e343f043d11ad6e.setContent(html_1908213ceae5aa3e6546f03ad294f163);
+            
+        
+
+        circle_marker_690288b12cca5563ecc4132aff99dffd.bindPopup(popup_929f61cab4111fc51e343f043d11ad6e)
+        ;
+
+        
+    
+    
+            circle_marker_690288b12cca5563ecc4132aff99dffd.bindTooltip(
+                `<div>
+                     Chembur: AQI 187
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_908b0f4f4460b2b5590a254ab41a94d3 = L.marker(
+                [19.0522, 72.8993],
+                {
+}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            var div_icon_74bd38bcfcf3d2ac86efe601e512fb52 = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-family:monospace;font-size:10px;\n                font-weight:bold;color:white;text-shadow:1px 1px 2px black;\n                text-align:center;\u0027\u003e187\u003c/div\u003e",
+  "iconSize": [40, 20],
+  "iconAnchor": [20, 10],
+  "className": "empty",
+});
+        
+    
+                marker_908b0f4f4460b2b5590a254ab41a94d3.setIcon(div_icon_74bd38bcfcf3d2ac86efe601e512fb52);
+            
+    
+            var circle_marker_5fa431ec43cd564cd339f6c79c351c5f = L.circleMarker(
+                [18.9067, 72.8147],
+                {"bubblingMouseEvents": true, "color": "#ffff00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffff00", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14, "stroke": true, "weight": 3}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+        var popup_96d10ce1792560c2b6596fc2b59508ba = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_f0eed532748a5fbf4b7e6a3a89226bd1 = $(`<div id="html_f0eed532748a5fbf4b7e6a3a89226bd1" style="width: 100.0%; height: 100.0%;">         <div style='font-family:monospace;min-width:200px;'>             <b style='font-size:14px;'>Colaba</b><br>             <hr style='margin:4px 0;'>             <span style='font-size:18px;font-weight:bold;color:#ffff00;'>                 AQI 112</span>             <span style='font-size:12px;'> — Moderate</span><br>             <br>             <b>PM2.5:</b> 45 µg/m³<br>             <b>PM10:</b>  72 µg/m³<br>             <b>NO₂:</b>   32 ppb<br>             <br>             <i style='color:#ffff00;'>😐 Unhealthy for sensitive groups. Reduce outdoor exertion.</i>         </div>         </div>`)[0];
+                popup_96d10ce1792560c2b6596fc2b59508ba.setContent(html_f0eed532748a5fbf4b7e6a3a89226bd1);
+            
+        
+
+        circle_marker_5fa431ec43cd564cd339f6c79c351c5f.bindPopup(popup_96d10ce1792560c2b6596fc2b59508ba)
+        ;
+
+        
+    
+    
+            circle_marker_5fa431ec43cd564cd339f6c79c351c5f.bindTooltip(
+                `<div>
+                     Colaba: AQI 112
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_412f338e854ddd6218e3488fe570f542 = L.marker(
+                [18.9067, 72.8147],
+                {
+}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            var div_icon_2d1a379e7650f8b06f1f7bf52bfa53a5 = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-family:monospace;font-size:10px;\n                font-weight:bold;color:white;text-shadow:1px 1px 2px black;\n                text-align:center;\u0027\u003e112\u003c/div\u003e",
+  "iconSize": [40, 20],
+  "iconAnchor": [20, 10],
+  "className": "empty",
+});
+        
+    
+                marker_412f338e854ddd6218e3488fe570f542.setIcon(div_icon_2d1a379e7650f8b06f1f7bf52bfa53a5);
+            
+    
+            var circle_marker_740f059660e9c8aec9e290820f0ea5e5 = L.circleMarker(
+                [19.0726, 72.8795],
+                {"bubblingMouseEvents": true, "color": "#ffff00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffff00", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14, "stroke": true, "weight": 3}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+        var popup_bb737864699e90e4d1203594598e8560 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_e0348b86c46e3ea3e78f66617e050a41 = $(`<div id="html_e0348b86c46e3ea3e78f66617e050a41" style="width: 100.0%; height: 100.0%;">         <div style='font-family:monospace;min-width:200px;'>             <b style='font-size:14px;'>Kurla</b><br>             <hr style='margin:4px 0;'>             <span style='font-size:18px;font-weight:bold;color:#ffff00;'>                 AQI 198</span>             <span style='font-size:12px;'> — Moderate</span><br>             <br>             <b>PM2.5:</b> 88 µg/m³<br>             <b>PM10:</b>  145 µg/m³<br>             <b>NO₂:</b>   58 ppb<br>             <br>             <i style='color:#ffff00;'>😐 Unhealthy for sensitive groups. Reduce outdoor exertion.</i>         </div>         </div>`)[0];
+                popup_bb737864699e90e4d1203594598e8560.setContent(html_e0348b86c46e3ea3e78f66617e050a41);
+            
+        
+
+        circle_marker_740f059660e9c8aec9e290820f0ea5e5.bindPopup(popup_bb737864699e90e4d1203594598e8560)
+        ;
+
+        
+    
+    
+            circle_marker_740f059660e9c8aec9e290820f0ea5e5.bindTooltip(
+                `<div>
+                     Kurla: AQI 198
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c4c278a04ef022899bc658fd7740e8ff = L.marker(
+                [19.0726, 72.8795],
+                {
+}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            var div_icon_18c93ff68da3d20210d109fc719b4330 = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-family:monospace;font-size:10px;\n                font-weight:bold;color:white;text-shadow:1px 1px 2px black;\n                text-align:center;\u0027\u003e198\u003c/div\u003e",
+  "iconSize": [40, 20],
+  "iconAnchor": [20, 10],
+  "className": "empty",
+});
+        
+    
+                marker_c4c278a04ef022899bc658fd7740e8ff.setIcon(div_icon_18c93ff68da3d20210d109fc719b4330);
+            
+    
+            var circle_marker_7c828b075795f59cd19cf5f72f481f98 = L.circleMarker(
+                [19.1874, 72.8487],
+                {"bubblingMouseEvents": true, "color": "#ffff00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffff00", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14, "stroke": true, "weight": 3}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+        var popup_0b893818af559ae3c2e71f0a76a97acc = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_e5d270059b41c2eaa2cd18fc9737e4aa = $(`<div id="html_e5d270059b41c2eaa2cd18fc9737e4aa" style="width: 100.0%; height: 100.0%;">         <div style='font-family:monospace;min-width:200px;'>             <b style='font-size:14px;'>Malad</b><br>             <hr style='margin:4px 0;'>             <span style='font-size:18px;font-weight:bold;color:#ffff00;'>                 AQI 134</span>             <span style='font-size:12px;'> — Moderate</span><br>             <br>             <b>PM2.5:</b> 54 µg/m³<br>             <b>PM10:</b>  88 µg/m³<br>             <b>NO₂:</b>   35 ppb<br>             <br>             <i style='color:#ffff00;'>😐 Unhealthy for sensitive groups. Reduce outdoor exertion.</i>         </div>         </div>`)[0];
+                popup_0b893818af559ae3c2e71f0a76a97acc.setContent(html_e5d270059b41c2eaa2cd18fc9737e4aa);
+            
+        
+
+        circle_marker_7c828b075795f59cd19cf5f72f481f98.bindPopup(popup_0b893818af559ae3c2e71f0a76a97acc)
+        ;
+
+        
+    
+    
+            circle_marker_7c828b075795f59cd19cf5f72f481f98.bindTooltip(
+                `<div>
+                     Malad: AQI 134
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_9c5d255e088be68e6d8cae96928a450e = L.marker(
+                [19.1874, 72.8487],
+                {
+}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            var div_icon_4aa6a88dbe3730fb3946b2fe887f699f = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-family:monospace;font-size:10px;\n                font-weight:bold;color:white;text-shadow:1px 1px 2px black;\n                text-align:center;\u0027\u003e134\u003c/div\u003e",
+  "iconSize": [40, 20],
+  "iconAnchor": [20, 10],
+  "className": "empty",
+});
+        
+    
+                marker_9c5d255e088be68e6d8cae96928a450e.setIcon(div_icon_4aa6a88dbe3730fb3946b2fe887f699f);
+            
+    
+            var circle_marker_2fae832ed550f3f612926836729f5a2e = L.circleMarker(
+                [18.9634, 72.8408],
+                {"bubblingMouseEvents": true, "color": "#ffff00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffff00", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14, "stroke": true, "weight": 3}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+        var popup_f241465ebb12aa66f4c0757f8ef13e1a = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_d16f47c89561fb1c805e7299fcf3ca92 = $(`<div id="html_d16f47c89561fb1c805e7299fcf3ca92" style="width: 100.0%; height: 100.0%;">         <div style='font-family:monospace;min-width:200px;'>             <b style='font-size:14px;'>Mazgaon</b><br>             <hr style='margin:4px 0;'>             <span style='font-size:18px;font-weight:bold;color:#ffff00;'>                 AQI 165</span>             <span style='font-size:12px;'> — Moderate</span><br>             <br>             <b>PM2.5:</b> 72 µg/m³<br>             <b>PM10:</b>  118 µg/m³<br>             <b>NO₂:</b>   48 ppb<br>             <br>             <i style='color:#ffff00;'>😐 Unhealthy for sensitive groups. Reduce outdoor exertion.</i>         </div>         </div>`)[0];
+                popup_f241465ebb12aa66f4c0757f8ef13e1a.setContent(html_d16f47c89561fb1c805e7299fcf3ca92);
+            
+        
+
+        circle_marker_2fae832ed550f3f612926836729f5a2e.bindPopup(popup_f241465ebb12aa66f4c0757f8ef13e1a)
+        ;
+
+        
+    
+    
+            circle_marker_2fae832ed550f3f612926836729f5a2e.bindTooltip(
+                `<div>
+                     Mazgaon: AQI 165
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_7cdd9e391c4939ec0d670d8dd987c2f6 = L.marker(
+                [18.9634, 72.8408],
+                {
+}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            var div_icon_95f7c1c67703d623be2c77615f1436bc = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-family:monospace;font-size:10px;\n                font-weight:bold;color:white;text-shadow:1px 1px 2px black;\n                text-align:center;\u0027\u003e165\u003c/div\u003e",
+  "iconSize": [40, 20],
+  "iconAnchor": [20, 10],
+  "className": "empty",
+});
+        
+    
+                marker_7cdd9e391c4939ec0d670d8dd987c2f6.setIcon(div_icon_95f7c1c67703d623be2c77615f1436bc);
+            
+    
+            var circle_marker_d4b28a1d583bc9424953a9c3bde18ad6 = L.circleMarker(
+                [19.033, 73.0297],
+                {"bubblingMouseEvents": true, "color": "#92d14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#92d14f", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14, "stroke": true, "weight": 3}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+        var popup_b0410cd1b7ce121031f7bc728c374396 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_fa631d62047cfc5e44b491087c6b5be0 = $(`<div id="html_fa631d62047cfc5e44b491087c6b5be0" style="width: 100.0%; height: 100.0%;">         <div style='font-family:monospace;min-width:200px;'>             <b style='font-size:14px;'>Navi Mumbai</b><br>             <hr style='margin:4px 0;'>             <span style='font-size:18px;font-weight:bold;color:#92d14f;'>                 AQI 88</span>             <span style='font-size:12px;'> — Satisfactory</span><br>             <br>             <b>PM2.5:</b> 32 µg/m³<br>             <b>PM10:</b>  58 µg/m³<br>             <b>NO₂:</b>   18 ppb<br>             <br>             <i style='color:#92d14f;'>😊 Acceptable. Sensitive people may feel mild effects.</i>         </div>         </div>`)[0];
+                popup_b0410cd1b7ce121031f7bc728c374396.setContent(html_fa631d62047cfc5e44b491087c6b5be0);
+            
+        
+
+        circle_marker_d4b28a1d583bc9424953a9c3bde18ad6.bindPopup(popup_b0410cd1b7ce121031f7bc728c374396)
+        ;
+
+        
+    
+    
+            circle_marker_d4b28a1d583bc9424953a9c3bde18ad6.bindTooltip(
+                `<div>
+                     Navi Mumbai: AQI 88
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_d4191239ff4e2ad57c798ce3971fc64a = L.marker(
+                [19.033, 73.0297],
+                {
+}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            var div_icon_7395e66da00a6093abddd98437d67d9a = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-family:monospace;font-size:10px;\n                font-weight:bold;color:white;text-shadow:1px 1px 2px black;\n                text-align:center;\u0027\u003e88\u003c/div\u003e",
+  "iconSize": [40, 20],
+  "iconAnchor": [20, 10],
+  "className": "empty",
+});
+        
+    
+                marker_d4191239ff4e2ad57c798ce3971fc64a.setIcon(div_icon_7395e66da00a6093abddd98437d67d9a);
+            
+    
+            var circle_marker_18178019a5a91a3a85036d5d0cb595df = L.circleMarker(
+                [19.1176, 72.906],
+                {"bubblingMouseEvents": true, "color": "#ffff00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffff00", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14, "stroke": true, "weight": 3}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+        var popup_c1f9c57466d6a5577cd9fa2ed0a9037c = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_fd8b9a6016932dead1ee612b2778bd0c = $(`<div id="html_fd8b9a6016932dead1ee612b2778bd0c" style="width: 100.0%; height: 100.0%;">         <div style='font-family:monospace;min-width:200px;'>             <b style='font-size:14px;'>Powai</b><br>             <hr style='margin:4px 0;'>             <span style='font-size:18px;font-weight:bold;color:#ffff00;'>                 AQI 118</span>             <span style='font-size:12px;'> — Moderate</span><br>             <br>             <b>PM2.5:</b> 48 µg/m³<br>             <b>PM10:</b>  78 µg/m³<br>             <b>NO₂:</b>   28 ppb<br>             <br>             <i style='color:#ffff00;'>😐 Unhealthy for sensitive groups. Reduce outdoor exertion.</i>         </div>         </div>`)[0];
+                popup_c1f9c57466d6a5577cd9fa2ed0a9037c.setContent(html_fd8b9a6016932dead1ee612b2778bd0c);
+            
+        
+
+        circle_marker_18178019a5a91a3a85036d5d0cb595df.bindPopup(popup_c1f9c57466d6a5577cd9fa2ed0a9037c)
+        ;
+
+        
+    
+    
+            circle_marker_18178019a5a91a3a85036d5d0cb595df.bindTooltip(
+                `<div>
+                     Powai: AQI 118
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_150286078fb8173f1a000d825cd2e04d = L.marker(
+                [19.1176, 72.906],
+                {
+}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            var div_icon_40eb9f8c7222459d6434b9a61b796ca8 = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-family:monospace;font-size:10px;\n                font-weight:bold;color:white;text-shadow:1px 1px 2px black;\n                text-align:center;\u0027\u003e118\u003c/div\u003e",
+  "iconSize": [40, 20],
+  "iconAnchor": [20, 10],
+  "className": "empty",
+});
+        
+    
+                marker_150286078fb8173f1a000d825cd2e04d.setIcon(div_icon_40eb9f8c7222459d6434b9a61b796ca8);
+            
+    
+            var circle_marker_e5e69bb79211950362a32511843a28d1 = L.circleMarker(
+                [19.0397, 72.8614],
+                {"bubblingMouseEvents": true, "color": "#ffff00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffff00", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14, "stroke": true, "weight": 3}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+        var popup_31da0e42196908f4876118a36205cca5 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_c3aca22022ff36b1885d6b794f2b3c12 = $(`<div id="html_c3aca22022ff36b1885d6b794f2b3c12" style="width: 100.0%; height: 100.0%;">         <div style='font-family:monospace;min-width:200px;'>             <b style='font-size:14px;'>Sion</b><br>             <hr style='margin:4px 0;'>             <span style='font-size:18px;font-weight:bold;color:#ffff00;'>                 AQI 172</span>             <span style='font-size:12px;'> — Moderate</span><br>             <br>             <b>PM2.5:</b> 76 µg/m³<br>             <b>PM10:</b>  122 µg/m³<br>             <b>NO₂:</b>   50 ppb<br>             <br>             <i style='color:#ffff00;'>😐 Unhealthy for sensitive groups. Reduce outdoor exertion.</i>         </div>         </div>`)[0];
+                popup_31da0e42196908f4876118a36205cca5.setContent(html_c3aca22022ff36b1885d6b794f2b3c12);
+            
+        
+
+        circle_marker_e5e69bb79211950362a32511843a28d1.bindPopup(popup_31da0e42196908f4876118a36205cca5)
+        ;
+
+        
+    
+    
+            circle_marker_e5e69bb79211950362a32511843a28d1.bindTooltip(
+                `<div>
+                     Sion: AQI 172
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_1fb88aa5be5ba5cc964890ba4340ce0c = L.marker(
+                [19.0397, 72.8614],
+                {
+}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            var div_icon_83ffdcba6005ef4d33c002c05afddc3f = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-family:monospace;font-size:10px;\n                font-weight:bold;color:white;text-shadow:1px 1px 2px black;\n                text-align:center;\u0027\u003e172\u003c/div\u003e",
+  "iconSize": [40, 20],
+  "iconAnchor": [20, 10],
+  "className": "empty",
+});
+        
+    
+                marker_1fb88aa5be5ba5cc964890ba4340ce0c.setIcon(div_icon_83ffdcba6005ef4d33c002c05afddc3f);
+            
+    
+            var circle_marker_40b0bb7309b3288bd40a2f1891fa3890 = L.circleMarker(
+                [19.0176, 72.8188],
+                {"bubblingMouseEvents": true, "color": "#ffff00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffff00", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14, "stroke": true, "weight": 3}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+        var popup_27c425a54c7c0972215ed897e4f96dfc = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_42cd8b02a439f9260024c4947815b5d1 = $(`<div id="html_42cd8b02a439f9260024c4947815b5d1" style="width: 100.0%; height: 100.0%;">         <div style='font-family:monospace;min-width:200px;'>             <b style='font-size:14px;'>Worli</b><br>             <hr style='margin:4px 0;'>             <span style='font-size:18px;font-weight:bold;color:#ffff00;'>                 AQI 128</span>             <span style='font-size:12px;'> — Moderate</span><br>             <br>             <b>PM2.5:</b> 52 µg/m³<br>             <b>PM10:</b>  84 µg/m³<br>             <b>NO₂:</b>   34 ppb<br>             <br>             <i style='color:#ffff00;'>😐 Unhealthy for sensitive groups. Reduce outdoor exertion.</i>         </div>         </div>`)[0];
+                popup_27c425a54c7c0972215ed897e4f96dfc.setContent(html_42cd8b02a439f9260024c4947815b5d1);
+            
+        
+
+        circle_marker_40b0bb7309b3288bd40a2f1891fa3890.bindPopup(popup_27c425a54c7c0972215ed897e4f96dfc)
+        ;
+
+        
+    
+    
+            circle_marker_40b0bb7309b3288bd40a2f1891fa3890.bindTooltip(
+                `<div>
+                     Worli: AQI 128
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_554851a3048c24eb4a8d731e8e4da5c0 = L.marker(
+                [19.0176, 72.8188],
+                {
+}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            var div_icon_f06d16f932a5d3c35287c2cf47d77eb9 = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-family:monospace;font-size:10px;\n                font-weight:bold;color:white;text-shadow:1px 1px 2px black;\n                text-align:center;\u0027\u003e128\u003c/div\u003e",
+  "iconSize": [40, 20],
+  "iconAnchor": [20, 10],
+  "className": "empty",
+});
+        
+    
+                marker_554851a3048c24eb4a8d731e8e4da5c0.setIcon(div_icon_f06d16f932a5d3c35287c2cf47d77eb9);
+            
+    
+            var circle_marker_c84cb9fb725ebe1543f4919ddd0290f4 = L.circleMarker(
+                [19.1136, 72.8697],
+                {"bubblingMouseEvents": true, "color": "#ffff00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffff00", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14, "stroke": true, "weight": 3}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+        var popup_0526b003621fc9814c1a937fc59805b1 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_4a26cc067c4e8caa643e0980388a9106 = $(`<div id="html_4a26cc067c4e8caa643e0980388a9106" style="width: 100.0%; height: 100.0%;">         <div style='font-family:monospace;min-width:200px;'>             <b style='font-size:14px;'>Andheri</b><br>             <hr style='margin:4px 0;'>             <span style='font-size:18px;font-weight:bold;color:#ffff00;'>                 AQI 156</span>             <span style='font-size:12px;'> — Moderate</span><br>             <br>             <b>PM2.5:</b> 68 µg/m³<br>             <b>PM10:</b>  112 µg/m³<br>             <b>NO₂:</b>   44 ppb<br>             <br>             <i style='color:#ffff00;'>😐 Unhealthy for sensitive groups. Reduce outdoor exertion.</i>         </div>         </div>`)[0];
+                popup_0526b003621fc9814c1a937fc59805b1.setContent(html_4a26cc067c4e8caa643e0980388a9106);
+            
+        
+
+        circle_marker_c84cb9fb725ebe1543f4919ddd0290f4.bindPopup(popup_0526b003621fc9814c1a937fc59805b1)
+        ;
+
+        
+    
+    
+            circle_marker_c84cb9fb725ebe1543f4919ddd0290f4.bindTooltip(
+                `<div>
+                     Andheri: AQI 156
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_4bdd4125f320b8090580e6a7066a75ba = L.marker(
+                [19.1136, 72.8697],
+                {
+}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            var div_icon_54a04bedca57d2963a78bdd639769c5a = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-family:monospace;font-size:10px;\n                font-weight:bold;color:white;text-shadow:1px 1px 2px black;\n                text-align:center;\u0027\u003e156\u003c/div\u003e",
+  "iconSize": [40, 20],
+  "iconAnchor": [20, 10],
+  "className": "empty",
+});
+        
+    
+                marker_4bdd4125f320b8090580e6a7066a75ba.setIcon(div_icon_54a04bedca57d2963a78bdd639769c5a);
+            
+    
+            var circle_marker_ffe8d0d6b5d3d9076e843b8ee25e30f1 = L.circleMarker(
+                [19.2183, 72.9781],
+                {"bubblingMouseEvents": true, "color": "#ffff00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffff00", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14, "stroke": true, "weight": 3}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+        var popup_40f6b0678db0c5c568075aa6452685c4 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_8f608ad0bd7d0bd4894e802a0cc7a662 = $(`<div id="html_8f608ad0bd7d0bd4894e802a0cc7a662" style="width: 100.0%; height: 100.0%;">         <div style='font-family:monospace;min-width:200px;'>             <b style='font-size:14px;'>Thane</b><br>             <hr style='margin:4px 0;'>             <span style='font-size:18px;font-weight:bold;color:#ffff00;'>                 AQI 145</span>             <span style='font-size:12px;'> — Moderate</span><br>             <br>             <b>PM2.5:</b> 61 µg/m³<br>             <b>PM10:</b>  98 µg/m³<br>             <b>NO₂:</b>   40 ppb<br>             <br>             <i style='color:#ffff00;'>😐 Unhealthy for sensitive groups. Reduce outdoor exertion.</i>         </div>         </div>`)[0];
+                popup_40f6b0678db0c5c568075aa6452685c4.setContent(html_8f608ad0bd7d0bd4894e802a0cc7a662);
+            
+        
+
+        circle_marker_ffe8d0d6b5d3d9076e843b8ee25e30f1.bindPopup(popup_40f6b0678db0c5c568075aa6452685c4)
+        ;
+
+        
+    
+    
+            circle_marker_ffe8d0d6b5d3d9076e843b8ee25e30f1.bindTooltip(
+                `<div>
+                     Thane: AQI 145
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_715b4a9304ee66da4799d2cd450f6163 = L.marker(
+                [19.2183, 72.9781],
+                {
+}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            var div_icon_c6439a777138b53c5b37273656001ce1 = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-family:monospace;font-size:10px;\n                font-weight:bold;color:white;text-shadow:1px 1px 2px black;\n                text-align:center;\u0027\u003e145\u003c/div\u003e",
+  "iconSize": [40, 20],
+  "iconAnchor": [20, 10],
+  "className": "empty",
+});
+        
+    
+                marker_715b4a9304ee66da4799d2cd450f6163.setIcon(div_icon_c6439a777138b53c5b37273656001ce1);
+            
+    
+            var circle_marker_6e56f755b6d75a51fe0e19f008c40fe3 = L.circleMarker(
+                [19.0422, 72.8545],
+                {"bubblingMouseEvents": true, "color": "#ff7e00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7e00", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14, "stroke": true, "weight": 3}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+        var popup_3882a83a7d54d86166afb0f04a31d417 = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_9c9154fb8d8e03a34196ff2a1a5692f8 = $(`<div id="html_9c9154fb8d8e03a34196ff2a1a5692f8" style="width: 100.0%; height: 100.0%;">         <div style='font-family:monospace;min-width:200px;'>             <b style='font-size:14px;'>Dharavi</b><br>             <hr style='margin:4px 0;'>             <span style='font-size:18px;font-weight:bold;color:#ff7e00;'>                 AQI 215</span>             <span style='font-size:12px;'> — Poor</span><br>             <br>             <b>PM2.5:</b> 96 µg/m³<br>             <b>PM10:</b>  158 µg/m³<br>             <b>NO₂:</b>   62 ppb<br>             <br>             <i style='color:#ff7e00;'>😷 Everyone may feel health effects. Wear a mask.</i>         </div>         </div>`)[0];
+                popup_3882a83a7d54d86166afb0f04a31d417.setContent(html_9c9154fb8d8e03a34196ff2a1a5692f8);
+            
+        
+
+        circle_marker_6e56f755b6d75a51fe0e19f008c40fe3.bindPopup(popup_3882a83a7d54d86166afb0f04a31d417)
+        ;
+
+        
+    
+    
+            circle_marker_6e56f755b6d75a51fe0e19f008c40fe3.bindTooltip(
+                `<div>
+                     Dharavi: AQI 215
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f634408697d5d8aa7bc7a4dcf9356e9b = L.marker(
+                [19.0422, 72.8545],
+                {
+}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            var div_icon_2b02eff3aa2aaec8e5e978c747ff6d34 = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-family:monospace;font-size:10px;\n                font-weight:bold;color:white;text-shadow:1px 1px 2px black;\n                text-align:center;\u0027\u003e215\u003c/div\u003e",
+  "iconSize": [40, 20],
+  "iconAnchor": [20, 10],
+  "className": "empty",
+});
+        
+    
+                marker_f634408697d5d8aa7bc7a4dcf9356e9b.setIcon(div_icon_2b02eff3aa2aaec8e5e978c747ff6d34);
+            
+    
+            var circle_marker_1ddc7e479d7f459d261852304462c876 = L.circleMarker(
+                [19.2042, 72.849],
+                {"bubblingMouseEvents": true, "color": "#ffff00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffff00", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14, "stroke": true, "weight": 3}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+        var popup_005e70f18df5d60d21cf5d678fcb4d7b = L.popup({
+  "maxWidth": 280,
+});
+
+        
+            
+                var html_1085fc041f9b67c6293cbde9d56cd5fa = $(`<div id="html_1085fc041f9b67c6293cbde9d56cd5fa" style="width: 100.0%; height: 100.0%;">         <div style='font-family:monospace;min-width:200px;'>             <b style='font-size:14px;'>Kandivali</b><br>             <hr style='margin:4px 0;'>             <span style='font-size:18px;font-weight:bold;color:#ffff00;'>                 AQI 122</span>             <span style='font-size:12px;'> — Moderate</span><br>             <br>             <b>PM2.5:</b> 50 µg/m³<br>             <b>PM10:</b>  82 µg/m³<br>             <b>NO₂:</b>   30 ppb<br>             <br>             <i style='color:#ffff00;'>😐 Unhealthy for sensitive groups. Reduce outdoor exertion.</i>         </div>         </div>`)[0];
+                popup_005e70f18df5d60d21cf5d678fcb4d7b.setContent(html_1085fc041f9b67c6293cbde9d56cd5fa);
+            
+        
+
+        circle_marker_1ddc7e479d7f459d261852304462c876.bindPopup(popup_005e70f18df5d60d21cf5d678fcb4d7b)
+        ;
+
+        
+    
+    
+            circle_marker_1ddc7e479d7f459d261852304462c876.bindTooltip(
+                `<div>
+                     Kandivali: AQI 122
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_685159d0c7154013fe3b3e6581ea0ab1 = L.marker(
+                [19.2042, 72.849],
+                {
+}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            var div_icon_674be4cdccfd4f85113cae0d3b5d84da = L.divIcon({
+  "html": "\u003cdiv style=\u0027font-family:monospace;font-size:10px;\n                font-weight:bold;color:white;text-shadow:1px 1px 2px black;\n                text-align:center;\u0027\u003e122\u003c/div\u003e",
+  "iconSize": [40, 20],
+  "iconAnchor": [20, 10],
+  "className": "empty",
+});
+        
+    
+                marker_685159d0c7154013fe3b3e6581ea0ab1.setIcon(div_icon_674be4cdccfd4f85113cae0d3b5d84da);
+            
+    
+            var circle_6742e24597b46548660e6915ce73ae4f = L.circle(
+                [19.01, 72.815],
+                {"bubblingMouseEvents": true, "color": "#ff7e00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7e00", "fillOpacity": 0.08, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 500, "stroke": true, "weight": 1}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            circle_6742e24597b46548660e6915ce73ae4f.bindTooltip(
+                `<div>
+                     Construction dust zone: Coastal Road Project - Worli
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_769d2bd19b9dc29d2269287d2c7aceb6 = L.circle(
+                [19.065, 72.865],
+                {"bubblingMouseEvents": true, "color": "#ff4444", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4444", "fillOpacity": 0.08, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 500, "stroke": true, "weight": 1}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            circle_769d2bd19b9dc29d2269287d2c7aceb6.bindTooltip(
+                `<div>
+                     Construction dust zone: Metro Line 3 - BKC Station
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_d5fcfc8747dacbfab74b111afa3d266b = L.circle(
+                [19.04, 72.854],
+                {"bubblingMouseEvents": true, "color": "#ff7e00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7e00", "fillOpacity": 0.08, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 500, "stroke": true, "weight": 1}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            circle_d5fcfc8747dacbfab74b111afa3d266b.bindTooltip(
+                `<div>
+                     Construction dust zone: Dharavi Redevelopment Phase 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_269e233de6cc489d82b517bd95fdc18b = L.circle(
+                [19.018, 72.842],
+                {"bubblingMouseEvents": true, "color": "#ffff00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffff00", "fillOpacity": 0.08, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 500, "stroke": true, "weight": 1}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            circle_269e233de6cc489d82b517bd95fdc18b.bindTooltip(
+                `<div>
+                     Construction dust zone: Eastern Freeway Extension
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_d0212ba434b0435c51761f02368b7684 = L.circle(
+                [19.115, 72.842],
+                {"bubblingMouseEvents": true, "color": "#ff7e00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7e00", "fillOpacity": 0.08, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 500, "stroke": true, "weight": 1}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            circle_d0212ba434b0435c51761f02368b7684.bindTooltip(
+                `<div>
+                     Construction dust zone: Metro Line 7 - Andheri
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_2650684251e1d3cc9114ad95744633be = L.circle(
+                [19.085, 72.818],
+                {"bubblingMouseEvents": true, "color": "#ffff00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffff00", "fillOpacity": 0.08, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 500, "stroke": true, "weight": 1}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            circle_2650684251e1d3cc9114ad95744633be.bindTooltip(
+                `<div>
+                     Construction dust zone: Versova-Bandra Sea Link
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_fc9cefa16f043c6aa24a168346a650a5 = L.circle(
+                [19.158, 72.849],
+                {"bubblingMouseEvents": true, "color": "#92d14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#92d14f", "fillOpacity": 0.08, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 500, "stroke": true, "weight": 1}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            circle_fc9cefa16f043c6aa24a168346a650a5.bindTooltip(
+                `<div>
+                     Construction dust zone: Goregaon Link Road Widening
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_63efde062ca695ab016f810b4976ee32 = L.circle(
+                [19.195, 72.965],
+                {"bubblingMouseEvents": true, "color": "#ff7e00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7e00", "fillOpacity": 0.08, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 500, "stroke": true, "weight": 1}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            circle_63efde062ca695ab016f810b4976ee32.bindTooltip(
+                `<div>
+                     Construction dust zone: Thane Creek Bridge
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_78779244df116e5171cf667bd8b57129 = L.circle(
+                [18.992, 73.058],
+                {"bubblingMouseEvents": true, "color": "#ff4444", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff4444", "fillOpacity": 0.08, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 500, "stroke": true, "weight": 1}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            circle_78779244df116e5171cf667bd8b57129.bindTooltip(
+                `<div>
+                     Construction dust zone: Navi Mumbai Airport Construction
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_1c8b57ef934e633531423302a899d793 = L.circle(
+                [19.072, 72.882],
+                {"bubblingMouseEvents": true, "color": "#ff7e00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff7e00", "fillOpacity": 0.08, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 500, "stroke": true, "weight": 1}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            circle_1c8b57ef934e633531423302a899d793.bindTooltip(
+                `<div>
+                     Construction dust zone: Santacruz-Chembur Link Road
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_07fbfb8e5077eb73e731a615f3c973f2 = L.circle(
+                [19.173, 72.956],
+                {"bubblingMouseEvents": true, "color": "#ffff00", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffff00", "fillOpacity": 0.08, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 500, "stroke": true, "weight": 1}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            circle_07fbfb8e5077eb73e731a615f3c973f2.bindTooltip(
+                `<div>
+                     Construction dust zone: Mulund Flyover
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_e2ca0e2828c23f9f97850135983e74b8 = L.circle(
+                [19.068, 72.868],
+                {"bubblingMouseEvents": true, "color": "#92d14f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#92d14f", "fillOpacity": 0.08, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 500, "stroke": true, "weight": 1}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            circle_e2ca0e2828c23f9f97850135983e74b8.bindTooltip(
+                `<div>
+                     Construction dust zone: Bandra-Kurla Complex Tower
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_cluster_5c4dbdbb5e976d4c88c58ec3c70c2fdc = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_ff420c062b2ae93f6a4a683d55804273 = L.marker(
+                [19.01, 72.815],
+                {
+}
+            ).addTo(marker_cluster_5c4dbdbb5e976d4c88c58ec3c70c2fdc);
+        
+    
+            var icon_4768f490444e076d61f04bb2d8726f4c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "wrench",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3578474893f1f628108246ccd429af8a = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_5cb70876d878069b86f558e5fc2920c9 = $(`<div id="html_5cb70876d878069b86f558e5fc2920c9" style="width: 100.0%; height: 100.0%;">             <div style='font-family:monospace;min-width:220px;'>                 <b>🏗️ Coastal Road Project - Worli</b><br>                 <hr style='margin:4px 0;'>                 <b>PM10:</b> <span style='color:#ff7e00;font-weight:bold;'>                     285 µg/m³</span><br>                 <b>Status:</b> Active<br>                 <b>NGT Mandate:</b> Monitor active ✅<br>                 <br>                 <i style='font-size:11px;color:#888;'>                 Construction dust radius: ~500m<br>                 WHO PM10 limit: 45 µg/m³</i>             </div>             </div>`)[0];
+                popup_3578474893f1f628108246ccd429af8a.setContent(html_5cb70876d878069b86f558e5fc2920c9);
+            
+        
+
+        marker_ff420c062b2ae93f6a4a683d55804273.bindPopup(popup_3578474893f1f628108246ccd429af8a)
+        ;
+
+        
+    
+    
+            marker_ff420c062b2ae93f6a4a683d55804273.bindTooltip(
+                `<div>
+                     🏗️ Coastal Road Project - Worli: PM10 285
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ff420c062b2ae93f6a4a683d55804273.setIcon(icon_4768f490444e076d61f04bb2d8726f4c);
+            
+    
+            var marker_7dce8bf609bf28437cd3ba13ea3f2f79 = L.marker(
+                [19.065, 72.865],
+                {
+}
+            ).addTo(marker_cluster_5c4dbdbb5e976d4c88c58ec3c70c2fdc);
+        
+    
+            var icon_535d40a0dc27bd6072826daeb6f73c57 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "wrench",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_795fa7af36fdb96733b6a10c825e5438 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_e66219dab250c13ded495aad1a4e8d40 = $(`<div id="html_e66219dab250c13ded495aad1a4e8d40" style="width: 100.0%; height: 100.0%;">             <div style='font-family:monospace;min-width:220px;'>                 <b>🏗️ Metro Line 3 - BKC Station</b><br>                 <hr style='margin:4px 0;'>                 <b>PM10:</b> <span style='color:#ff4444;font-weight:bold;'>                     312 µg/m³</span><br>                 <b>Status:</b> Active<br>                 <b>NGT Mandate:</b> Monitor active ✅<br>                 <br>                 <i style='font-size:11px;color:#888;'>                 Construction dust radius: ~500m<br>                 WHO PM10 limit: 45 µg/m³</i>             </div>             </div>`)[0];
+                popup_795fa7af36fdb96733b6a10c825e5438.setContent(html_e66219dab250c13ded495aad1a4e8d40);
+            
+        
+
+        marker_7dce8bf609bf28437cd3ba13ea3f2f79.bindPopup(popup_795fa7af36fdb96733b6a10c825e5438)
+        ;
+
+        
+    
+    
+            marker_7dce8bf609bf28437cd3ba13ea3f2f79.bindTooltip(
+                `<div>
+                     🏗️ Metro Line 3 - BKC Station: PM10 312
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7dce8bf609bf28437cd3ba13ea3f2f79.setIcon(icon_535d40a0dc27bd6072826daeb6f73c57);
+            
+    
+            var marker_c18a65fec108aad8eebdeb65ace0923c = L.marker(
+                [19.04, 72.854],
+                {
+}
+            ).addTo(marker_cluster_5c4dbdbb5e976d4c88c58ec3c70c2fdc);
+        
+    
+            var icon_9c0f934656e15e45ed4bdd260139c709 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "wrench",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c09af0eabedfc75ca83c8a932da78efc = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_9a270700b0ac9c4b4639dfb2ac1d544f = $(`<div id="html_9a270700b0ac9c4b4639dfb2ac1d544f" style="width: 100.0%; height: 100.0%;">             <div style='font-family:monospace;min-width:220px;'>                 <b>🏗️ Dharavi Redevelopment Phase 1</b><br>                 <hr style='margin:4px 0;'>                 <b>PM10:</b> <span style='color:#ff7e00;font-weight:bold;'>                     298 µg/m³</span><br>                 <b>Status:</b> Active<br>                 <b>NGT Mandate:</b> Monitor active ✅<br>                 <br>                 <i style='font-size:11px;color:#888;'>                 Construction dust radius: ~500m<br>                 WHO PM10 limit: 45 µg/m³</i>             </div>             </div>`)[0];
+                popup_c09af0eabedfc75ca83c8a932da78efc.setContent(html_9a270700b0ac9c4b4639dfb2ac1d544f);
+            
+        
+
+        marker_c18a65fec108aad8eebdeb65ace0923c.bindPopup(popup_c09af0eabedfc75ca83c8a932da78efc)
+        ;
+
+        
+    
+    
+            marker_c18a65fec108aad8eebdeb65ace0923c.bindTooltip(
+                `<div>
+                     🏗️ Dharavi Redevelopment Phase 1: PM10 298
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c18a65fec108aad8eebdeb65ace0923c.setIcon(icon_9c0f934656e15e45ed4bdd260139c709);
+            
+    
+            var marker_a0518ee5be384198fa26b5b610c820ba = L.marker(
+                [19.018, 72.842],
+                {
+}
+            ).addTo(marker_cluster_5c4dbdbb5e976d4c88c58ec3c70c2fdc);
+        
+    
+            var icon_351c1d0839bd75b2e8323ed5a7c825fc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "yellow",
+  "iconColor": "white",
+  "icon": "wrench",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_db937c5874b88d52456fb711ae078edb = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_d0485ba14bbc2595d5b4c7932ab9984a = $(`<div id="html_d0485ba14bbc2595d5b4c7932ab9984a" style="width: 100.0%; height: 100.0%;">             <div style='font-family:monospace;min-width:220px;'>                 <b>🏗️ Eastern Freeway Extension</b><br>                 <hr style='margin:4px 0;'>                 <b>PM10:</b> <span style='color:#ffff00;font-weight:bold;'>                     245 µg/m³</span><br>                 <b>Status:</b> Active<br>                 <b>NGT Mandate:</b> Monitor active ✅<br>                 <br>                 <i style='font-size:11px;color:#888;'>                 Construction dust radius: ~500m<br>                 WHO PM10 limit: 45 µg/m³</i>             </div>             </div>`)[0];
+                popup_db937c5874b88d52456fb711ae078edb.setContent(html_d0485ba14bbc2595d5b4c7932ab9984a);
+            
+        
+
+        marker_a0518ee5be384198fa26b5b610c820ba.bindPopup(popup_db937c5874b88d52456fb711ae078edb)
+        ;
+
+        
+    
+    
+            marker_a0518ee5be384198fa26b5b610c820ba.bindTooltip(
+                `<div>
+                     🏗️ Eastern Freeway Extension: PM10 245
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a0518ee5be384198fa26b5b610c820ba.setIcon(icon_351c1d0839bd75b2e8323ed5a7c825fc);
+            
+    
+            var marker_707514681cafb78c3ffc3d5ff23a175d = L.marker(
+                [19.115, 72.842],
+                {
+}
+            ).addTo(marker_cluster_5c4dbdbb5e976d4c88c58ec3c70c2fdc);
+        
+    
+            var icon_8be988dc29b5758426f66514e9e81149 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "wrench",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_724aab45e93f2f51fa9c2223cfb697df = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_d4a5e07892656ece9469761e3eae20d5 = $(`<div id="html_d4a5e07892656ece9469761e3eae20d5" style="width: 100.0%; height: 100.0%;">             <div style='font-family:monospace;min-width:220px;'>                 <b>🏗️ Metro Line 7 - Andheri</b><br>                 <hr style='margin:4px 0;'>                 <b>PM10:</b> <span style='color:#ff7e00;font-weight:bold;'>                     267 µg/m³</span><br>                 <b>Status:</b> Active<br>                 <b>NGT Mandate:</b> Monitor active ✅<br>                 <br>                 <i style='font-size:11px;color:#888;'>                 Construction dust radius: ~500m<br>                 WHO PM10 limit: 45 µg/m³</i>             </div>             </div>`)[0];
+                popup_724aab45e93f2f51fa9c2223cfb697df.setContent(html_d4a5e07892656ece9469761e3eae20d5);
+            
+        
+
+        marker_707514681cafb78c3ffc3d5ff23a175d.bindPopup(popup_724aab45e93f2f51fa9c2223cfb697df)
+        ;
+
+        
+    
+    
+            marker_707514681cafb78c3ffc3d5ff23a175d.bindTooltip(
+                `<div>
+                     🏗️ Metro Line 7 - Andheri: PM10 267
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_707514681cafb78c3ffc3d5ff23a175d.setIcon(icon_8be988dc29b5758426f66514e9e81149);
+            
+    
+            var marker_51858db8e8d9821d9f73dbfff7f26e3d = L.marker(
+                [19.085, 72.818],
+                {
+}
+            ).addTo(marker_cluster_5c4dbdbb5e976d4c88c58ec3c70c2fdc);
+        
+    
+            var icon_e717d622f2ab086451f39ce98f45f609 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "yellow",
+  "iconColor": "white",
+  "icon": "wrench",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6c1c4c51f686675ef93a94f0d3d06778 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_c47c2d83c369200310028028b470b071 = $(`<div id="html_c47c2d83c369200310028028b470b071" style="width: 100.0%; height: 100.0%;">             <div style='font-family:monospace;min-width:220px;'>                 <b>🏗️ Versova-Bandra Sea Link</b><br>                 <hr style='margin:4px 0;'>                 <b>PM10:</b> <span style='color:#ffff00;font-weight:bold;'>                     223 µg/m³</span><br>                 <b>Status:</b> Active<br>                 <b>NGT Mandate:</b> Monitor active ✅<br>                 <br>                 <i style='font-size:11px;color:#888;'>                 Construction dust radius: ~500m<br>                 WHO PM10 limit: 45 µg/m³</i>             </div>             </div>`)[0];
+                popup_6c1c4c51f686675ef93a94f0d3d06778.setContent(html_c47c2d83c369200310028028b470b071);
+            
+        
+
+        marker_51858db8e8d9821d9f73dbfff7f26e3d.bindPopup(popup_6c1c4c51f686675ef93a94f0d3d06778)
+        ;
+
+        
+    
+    
+            marker_51858db8e8d9821d9f73dbfff7f26e3d.bindTooltip(
+                `<div>
+                     🏗️ Versova-Bandra Sea Link: PM10 223
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_51858db8e8d9821d9f73dbfff7f26e3d.setIcon(icon_e717d622f2ab086451f39ce98f45f609);
+            
+    
+            var marker_f28a8abdedb265fce4c36479ab4b260f = L.marker(
+                [19.158, 72.849],
+                {
+}
+            ).addTo(marker_cluster_5c4dbdbb5e976d4c88c58ec3c70c2fdc);
+        
+    
+            var icon_49f768403b4265d447614b86ff42e750 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "yellow",
+  "iconColor": "white",
+  "icon": "wrench",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f55b779416b1ee2d175845174fa1431b = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_05cd19287cc5b55daace7a03d702ff0b = $(`<div id="html_05cd19287cc5b55daace7a03d702ff0b" style="width: 100.0%; height: 100.0%;">             <div style='font-family:monospace;min-width:220px;'>                 <b>🏗️ Goregaon Link Road Widening</b><br>                 <hr style='margin:4px 0;'>                 <b>PM10:</b> <span style='color:#92d14f;font-weight:bold;'>                     198 µg/m³</span><br>                 <b>Status:</b> Active<br>                 <b>NGT Mandate:</b> Monitor active ✅<br>                 <br>                 <i style='font-size:11px;color:#888;'>                 Construction dust radius: ~500m<br>                 WHO PM10 limit: 45 µg/m³</i>             </div>             </div>`)[0];
+                popup_f55b779416b1ee2d175845174fa1431b.setContent(html_05cd19287cc5b55daace7a03d702ff0b);
+            
+        
+
+        marker_f28a8abdedb265fce4c36479ab4b260f.bindPopup(popup_f55b779416b1ee2d175845174fa1431b)
+        ;
+
+        
+    
+    
+            marker_f28a8abdedb265fce4c36479ab4b260f.bindTooltip(
+                `<div>
+                     🏗️ Goregaon Link Road Widening: PM10 198
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f28a8abdedb265fce4c36479ab4b260f.setIcon(icon_49f768403b4265d447614b86ff42e750);
+            
+    
+            var marker_b2a3dcf3dab6d2bc36b641d5780dcd50 = L.marker(
+                [19.195, 72.965],
+                {
+}
+            ).addTo(marker_cluster_5c4dbdbb5e976d4c88c58ec3c70c2fdc);
+        
+    
+            var icon_f71de88a1c6a2ca9a37b4091e581b9d0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "wrench",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e33e3ceff9ade06a1046f8be9051035f = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_1b526f3ac15100855350a5ab37d9fbdc = $(`<div id="html_1b526f3ac15100855350a5ab37d9fbdc" style="width: 100.0%; height: 100.0%;">             <div style='font-family:monospace;min-width:220px;'>                 <b>🏗️ Thane Creek Bridge</b><br>                 <hr style='margin:4px 0;'>                 <b>PM10:</b> <span style='color:#ff7e00;font-weight:bold;'>                     276 µg/m³</span><br>                 <b>Status:</b> Active<br>                 <b>NGT Mandate:</b> Monitor active ✅<br>                 <br>                 <i style='font-size:11px;color:#888;'>                 Construction dust radius: ~500m<br>                 WHO PM10 limit: 45 µg/m³</i>             </div>             </div>`)[0];
+                popup_e33e3ceff9ade06a1046f8be9051035f.setContent(html_1b526f3ac15100855350a5ab37d9fbdc);
+            
+        
+
+        marker_b2a3dcf3dab6d2bc36b641d5780dcd50.bindPopup(popup_e33e3ceff9ade06a1046f8be9051035f)
+        ;
+
+        
+    
+    
+            marker_b2a3dcf3dab6d2bc36b641d5780dcd50.bindTooltip(
+                `<div>
+                     🏗️ Thane Creek Bridge: PM10 276
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b2a3dcf3dab6d2bc36b641d5780dcd50.setIcon(icon_f71de88a1c6a2ca9a37b4091e581b9d0);
+            
+    
+            var marker_f1eb97d6d53d144a50b8c680356b9f13 = L.marker(
+                [18.992, 73.058],
+                {
+}
+            ).addTo(marker_cluster_5c4dbdbb5e976d4c88c58ec3c70c2fdc);
+        
+    
+            var icon_d51659e51b65b28a652a05a033530cc7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "wrench",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f9376fae014a0c57b52e77c559b568ba = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_982af26c47dd9ac9be042c1d30f888cc = $(`<div id="html_982af26c47dd9ac9be042c1d30f888cc" style="width: 100.0%; height: 100.0%;">             <div style='font-family:monospace;min-width:220px;'>                 <b>🏗️ Navi Mumbai Airport Construction</b><br>                 <hr style='margin:4px 0;'>                 <b>PM10:</b> <span style='color:#ff4444;font-weight:bold;'>                     334 µg/m³</span><br>                 <b>Status:</b> Active<br>                 <b>NGT Mandate:</b> Monitor active ✅<br>                 <br>                 <i style='font-size:11px;color:#888;'>                 Construction dust radius: ~500m<br>                 WHO PM10 limit: 45 µg/m³</i>             </div>             </div>`)[0];
+                popup_f9376fae014a0c57b52e77c559b568ba.setContent(html_982af26c47dd9ac9be042c1d30f888cc);
+            
+        
+
+        marker_f1eb97d6d53d144a50b8c680356b9f13.bindPopup(popup_f9376fae014a0c57b52e77c559b568ba)
+        ;
+
+        
+    
+    
+            marker_f1eb97d6d53d144a50b8c680356b9f13.bindTooltip(
+                `<div>
+                     🏗️ Navi Mumbai Airport Construction: PM10 334
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f1eb97d6d53d144a50b8c680356b9f13.setIcon(icon_d51659e51b65b28a652a05a033530cc7);
+            
+    
+            var marker_c6f6d39bd15119d7d833e4f3df153f50 = L.marker(
+                [19.072, 72.882],
+                {
+}
+            ).addTo(marker_cluster_5c4dbdbb5e976d4c88c58ec3c70c2fdc);
+        
+    
+            var icon_e721a8c86ba63c5a8768c2274f9315ba = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "wrench",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_938181f8a3f0dfda072f3cb42642040a = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_02bae62b2b808ae77690421d1fff7ba0 = $(`<div id="html_02bae62b2b808ae77690421d1fff7ba0" style="width: 100.0%; height: 100.0%;">             <div style='font-family:monospace;min-width:220px;'>                 <b>🏗️ Santacruz-Chembur Link Road</b><br>                 <hr style='margin:4px 0;'>                 <b>PM10:</b> <span style='color:#ff7e00;font-weight:bold;'>                     256 µg/m³</span><br>                 <b>Status:</b> Active<br>                 <b>NGT Mandate:</b> Monitor active ✅<br>                 <br>                 <i style='font-size:11px;color:#888;'>                 Construction dust radius: ~500m<br>                 WHO PM10 limit: 45 µg/m³</i>             </div>             </div>`)[0];
+                popup_938181f8a3f0dfda072f3cb42642040a.setContent(html_02bae62b2b808ae77690421d1fff7ba0);
+            
+        
+
+        marker_c6f6d39bd15119d7d833e4f3df153f50.bindPopup(popup_938181f8a3f0dfda072f3cb42642040a)
+        ;
+
+        
+    
+    
+            marker_c6f6d39bd15119d7d833e4f3df153f50.bindTooltip(
+                `<div>
+                     🏗️ Santacruz-Chembur Link Road: PM10 256
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c6f6d39bd15119d7d833e4f3df153f50.setIcon(icon_e721a8c86ba63c5a8768c2274f9315ba);
+            
+    
+            var marker_eb724b9938e98800ff665d72e4ef305a = L.marker(
+                [19.173, 72.956],
+                {
+}
+            ).addTo(marker_cluster_5c4dbdbb5e976d4c88c58ec3c70c2fdc);
+        
+    
+            var icon_01a465f7f14a5f23539e51338e7a6662 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "yellow",
+  "iconColor": "white",
+  "icon": "wrench",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b3593e939b75feadaf1aa4bb67cf0af7 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_fcc219e0655a68c0136313c4bdfabee1 = $(`<div id="html_fcc219e0655a68c0136313c4bdfabee1" style="width: 100.0%; height: 100.0%;">             <div style='font-family:monospace;min-width:220px;'>                 <b>🏗️ Mulund Flyover</b><br>                 <hr style='margin:4px 0;'>                 <b>PM10:</b> <span style='color:#ffff00;font-weight:bold;'>                     212 µg/m³</span><br>                 <b>Status:</b> Partial<br>                 <b>NGT Mandate:</b> Monitor active ✅<br>                 <br>                 <i style='font-size:11px;color:#888;'>                 Construction dust radius: ~500m<br>                 WHO PM10 limit: 45 µg/m³</i>             </div>             </div>`)[0];
+                popup_b3593e939b75feadaf1aa4bb67cf0af7.setContent(html_fcc219e0655a68c0136313c4bdfabee1);
+            
+        
+
+        marker_eb724b9938e98800ff665d72e4ef305a.bindPopup(popup_b3593e939b75feadaf1aa4bb67cf0af7)
+        ;
+
+        
+    
+    
+            marker_eb724b9938e98800ff665d72e4ef305a.bindTooltip(
+                `<div>
+                     🏗️ Mulund Flyover: PM10 212
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_eb724b9938e98800ff665d72e4ef305a.setIcon(icon_01a465f7f14a5f23539e51338e7a6662);
+            
+    
+            var marker_256df466629b6e6b84b5c487cedd9a13 = L.marker(
+                [19.068, 72.868],
+                {
+}
+            ).addTo(marker_cluster_5c4dbdbb5e976d4c88c58ec3c70c2fdc);
+        
+    
+            var icon_5148debeaef0b3ad5542a4b530b204a6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "yellow",
+  "iconColor": "white",
+  "icon": "wrench",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a8ac57f0603432c35530efc5cd7fa256 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_45d67f6c20164ba338880de973b74952 = $(`<div id="html_45d67f6c20164ba338880de973b74952" style="width: 100.0%; height: 100.0%;">             <div style='font-family:monospace;min-width:220px;'>                 <b>🏗️ Bandra-Kurla Complex Tower</b><br>                 <hr style='margin:4px 0;'>                 <b>PM10:</b> <span style='color:#92d14f;font-weight:bold;'>                     189 µg/m³</span><br>                 <b>Status:</b> Active<br>                 <b>NGT Mandate:</b> Monitor active ✅<br>                 <br>                 <i style='font-size:11px;color:#888;'>                 Construction dust radius: ~500m<br>                 WHO PM10 limit: 45 µg/m³</i>             </div>             </div>`)[0];
+                popup_a8ac57f0603432c35530efc5cd7fa256.setContent(html_45d67f6c20164ba338880de973b74952);
+            
+        
+
+        marker_256df466629b6e6b84b5c487cedd9a13.bindPopup(popup_a8ac57f0603432c35530efc5cd7fa256)
+        ;
+
+        
+    
+    
+            marker_256df466629b6e6b84b5c487cedd9a13.bindTooltip(
+                `<div>
+                     🏗️ Bandra-Kurla Complex Tower: PM10 189
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_256df466629b6e6b84b5c487cedd9a13.setIcon(icon_5148debeaef0b3ad5542a4b530b204a6);
+            
+    
+            marker_cluster_5c4dbdbb5e976d4c88c58ec3c70c2fdc.addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            var poly_line_ff8ae39cdb3006c3d0ae2ae6563dd579 = L.polyline(
+                [[19.2307, 72.8567], [19.2042, 72.849], [19.1874, 72.8487], [19.158, 72.849], [19.138, 72.848], [19.1136, 72.8278], [19.0596, 72.8295], [19.0176, 72.8188], [18.9967, 72.8258], [18.995, 72.84], [18.9634, 72.8408], [18.973, 72.838], [18.9398, 72.8355], [18.9322, 72.8264], [18.925, 72.8225]],
+                {"bubblingMouseEvents": true, "color": "#4a9eff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#4a9eff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            poly_line_ff8ae39cdb3006c3d0ae2ae6563dd579.bindTooltip(
+                `<div>
+                     ⚡ Fastest Route | 39.1km | AQI 136.3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f6a84010e30a60b12492e1df25f92e64 = L.marker(
+                [19.2307, 72.8567],
+                {
+}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            var icon_6bdafae5a32260b4c8333f39f097d38a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "play",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_f6a84010e30a60b12492e1df25f92e64.bindTooltip(
+                `<div>
+                     Start
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f6a84010e30a60b12492e1df25f92e64.setIcon(icon_6bdafae5a32260b4c8333f39f097d38a);
+            
+    
+            var marker_39919a35e47ef09be20186b2a101fc64 = L.marker(
+                [18.925, 72.8225],
+                {
+}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            var icon_d262585e2f76383e674d37461b9de79c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "stop",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_39919a35e47ef09be20186b2a101fc64.bindTooltip(
+                `<div>
+                     Destination
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_39919a35e47ef09be20186b2a101fc64.setIcon(icon_d262585e2f76383e674d37461b9de79c);
+            
+    
+            var poly_line_7904d79c3f5d14f4876ac17c16e8d682 = L.polyline(
+                [[19.2307, 72.8567], [19.2042, 72.849], [19.1874, 72.8487], [19.158, 72.849], [19.138, 72.848], [19.1136, 72.8278], [19.0596, 72.8295], [19.0176, 72.8188], [18.9967, 72.8258], [18.995, 72.84], [18.9634, 72.8408], [18.973, 72.838], [18.9398, 72.8355], [18.9322, 72.8264], [18.925, 72.8225]],
+                {"bubblingMouseEvents": true, "color": "#4caf7d", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#4caf7d", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            poly_line_7904d79c3f5d14f4876ac17c16e8d682.bindTooltip(
+                `<div>
+                     🌿 Cleanest Route | 39.1km | AQI 136.3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c639420a24769d2ddbe4c647d263e649 = L.marker(
+                [19.2307, 72.8567],
+                {
+}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            var icon_2b075a64fad9a2a02ff99a603b57e428 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "play",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_c639420a24769d2ddbe4c647d263e649.bindTooltip(
+                `<div>
+                     Start
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c639420a24769d2ddbe4c647d263e649.setIcon(icon_2b075a64fad9a2a02ff99a603b57e428);
+            
+    
+            var marker_26fe3dbffc586a0c5bcc92aefe1bb79c = L.marker(
+                [18.925, 72.8225],
+                {
+}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            var icon_28264221cb63d2deb034a310feba467d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "stop",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_26fe3dbffc586a0c5bcc92aefe1bb79c.bindTooltip(
+                `<div>
+                     Destination
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_26fe3dbffc586a0c5bcc92aefe1bb79c.setIcon(icon_28264221cb63d2deb034a310feba467d);
+            
+    
+            var poly_line_ce9c4e3c08a059fdb6fe26fc24fd7be5 = L.polyline(
+                [[19.2307, 72.8567], [19.2042, 72.849], [19.1874, 72.8487], [19.158, 72.849], [19.138, 72.848], [19.1136, 72.8278], [19.0596, 72.8295], [19.0176, 72.8188], [18.9967, 72.8258], [18.995, 72.84], [18.9634, 72.8408], [18.973, 72.838], [18.9398, 72.8355], [18.9322, 72.8264], [18.925, 72.8225]],
+                {"bubblingMouseEvents": true, "color": "#ffc96b", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ffc96b", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            poly_line_ce9c4e3c08a059fdb6fe26fc24fd7be5.bindTooltip(
+                `<div>
+                     ⚖️ Balanced Route | 39.1km | AQI 136.3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_82a70fae7fad21020b7cea99972535f1 = L.marker(
+                [19.2307, 72.8567],
+                {
+}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            var icon_5690d76551f199cc3b5f1d6ba8ee116a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "play",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_82a70fae7fad21020b7cea99972535f1.bindTooltip(
+                `<div>
+                     Start
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_82a70fae7fad21020b7cea99972535f1.setIcon(icon_5690d76551f199cc3b5f1d6ba8ee116a);
+            
+    
+            var marker_a86f6279ab46108e6d819cea1286cb0c = L.marker(
+                [18.925, 72.8225],
+                {
+}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+        
+    
+            var icon_e4535201c88445b83f5c5f7cf663955b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "stop",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+            marker_a86f6279ab46108e6d819cea1286cb0c.bindTooltip(
+                `<div>
+                     Destination
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a86f6279ab46108e6d819cea1286cb0c.setIcon(icon_e4535201c88445b83f5c5f7cf663955b);
+            
+    
+            var layer_control_6cf2697b52c88f4e843238a08ba2e4f3_layers = {
+                base_layers : {
+                    "cartodbdarkmatter" : tile_layer_3d80281fb83134d816ba45fb992f0041,
+                },
+                overlays :  {
+                    "macro_element_7008ab2a175edc7dda2149eee07734b6" : heat_map_7008ab2a175edc7dda2149eee07734b6,
+                    "Construction Sites" : marker_cluster_5c4dbdbb5e976d4c88c58ec3c70c2fdc,
+                },
+            };
+            let layer_control_6cf2697b52c88f4e843238a08ba2e4f3 = L.control.layers(
+                layer_control_6cf2697b52c88f4e843238a08ba2e4f3_layers.base_layers,
+                layer_control_6cf2697b52c88f4e843238a08ba2e4f3_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_b95efbe9d1ffd58ec6b4c437d32ce6fe);
+
+        
+</script>
+</html>
